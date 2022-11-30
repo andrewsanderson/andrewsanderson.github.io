@@ -3,11 +3,13 @@ import Skills from "./Components/Sections/Skills";
 
 function App() {
   return (
-    <div className=" flex justify-center">
+    <div className=" flex-col flex items-center">
+      <Nav />
+      <Hero />
       <div className="max-w-2/3 w-2/3">
-        <Nav />
-        <Hero />
         <Skills />
+      </div>
+      <div className="max-w-2/3 w-2/3">
         <Contact />
       </div>
     </div>

@@ -133,7 +133,7 @@ const Skills = () => {
           <Card
             ref={refArray[index]}
             key={skill.title}
-            className={`transform transition ease-in-out grayscale flex h-[300px] max-h-[300px] items-center 
+            className={`transform transition ease-in-out grayscale flex h-[300px] max-h-[300px] items-center overflow-hidden 
             ${
               skillViewIndex < 0
                 ? "hover:scale-110 hover:opacity-100 hover:grayscale-0"
@@ -154,19 +154,20 @@ const Skills = () => {
               <div>
                 Level: <span className="font-bold">{skill.level}</span>
               </div>
-              <div className="text-ellipsis overflow-hidden max-h-[70%]">
+              <div className="text-ellipsis overflow-hidden max-h-[70%] py-4">
                 {skill.description}...
-                <div>
-                  <a
-                    className="text-blue-500"
-                    href={`https://en.wikipedia.org/?curid=${skill.pageId}`}
-                  >
-                    {"Read More >"}
-                  </a>
-                </div>
-                <div className="text-right text-xs">
-                  info. fetched from Wikipedia
-                </div>
+              </div>
+
+              <div>
+                <a
+                  className="text-blue-500"
+                  href={`https://en.wikipedia.org/?curid=${skill.pageId}`}
+                >
+                  {"Read More >"}
+                </a>
+              </div>
+              <div className="text-right text-[.6rem] text-gray-500 ">
+                info. fetched from Wikipedia
               </div>
             </div>
           </Card>
