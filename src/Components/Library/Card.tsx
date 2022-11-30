@@ -14,7 +14,7 @@ const Card = forwardRef(
       <div
         ref={ref}
         {...otherProps}
-        className={`shadow-2xl m-4 p-4  ${className}`}
+        className={`shadow-2xl m-4 p-4 bg-white  ${className}`}
       >
         {children}
       </div>
