@@ -1,24 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Nav, Contact, Hero } from "./Components/Sections";
+import Skills from "./Components/Sections/Skills";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className=" flex justify-center">
+      <div className="max-w-2/3 w-2/3">
+        <Nav />
+        <Hero />
+        <Skills />
+        <Contact />
+      </div>
     </div>
   );
 }
