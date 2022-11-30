@@ -45,6 +45,13 @@ const skills = [
     iconUrl: "/media/icons/figma.svg",
     description: "Fetching from Wikipedia....",
   },
+  {
+    pageId: 44926137,
+    title: "React",
+    level: "Intermediate",
+    iconUrl: "/media/icons/react.svg",
+    description: "Fetching from Wikipedia....",
+  },
 ];
 
 const Skills = () => {
@@ -121,20 +128,18 @@ const Skills = () => {
 
   return (
     <div className="grid-cols-1 lg:grid-cols-2 grid" ref={wrapperRef}>
-      {skillViewIndex}
       {skillState.map((skill, index) => {
         return (
           <Card
             ref={refArray[index]}
             key={skill.title}
-            className={`
-           opacity-70transform transition ease-in-out grayscale  flex h-[300px] max-h-[300px] items-center 
+            className={`transform transition ease-in-out grayscale flex h-[300px] max-h-[300px] items-center 
             ${
               skillViewIndex < 0
                 ? "hover:scale-110 hover:opacity-100 hover:grayscale-0"
                 : skillViewIndex === index
                 ? "scale-110 opacity-100 grayscale-0"
-                : ""
+                : "opacity-70"
             }
              `}
           >
@@ -152,9 +157,15 @@ const Skills = () => {
               <div className="text-ellipsis overflow-hidden max-h-[70%]">
                 {skill.description}...
                 <div>
-                  <a href={`https://en.wikipedia.org/?curid=${skill.pageId}`}>
+                  <a
+                    className="text-blue-500"
+                    href={`https://en.wikipedia.org/?curid=${skill.pageId}`}
+                  >
                     {"Read More >"}
                   </a>
+                </div>
+                <div className="text-right text-xs">
+                  info. fetched from Wikipedia
                 </div>
               </div>
             </div>
