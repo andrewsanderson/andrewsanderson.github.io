@@ -57,18 +57,16 @@ const DropDownMenu = ({ refs }: any) => {
   };
 
   return (
-    <div className="flex bg-[rgb(248, 244, 238)]">
+    <div className="flex flex-row-reverse bg-[rgb(248, 244, 238)]">
       {yVal > 30 && (
         <>
           <div className="flex flex-col">
             {Object.entries(refs).map(([key, val]) => {
-              const isThisAc = key === activeTab || isActive;
+              const isThisAc = isActive;
               return (
                 <div
                   onClick={() => navClick(key)}
-                  className={`${
-                    isThisAc ? "opacity-1 " : "opacity-0 h-[1px]"
-                  }  text-right pr-2`}
+                  className={`${isThisAc ? " " : "hidden"}   pl-2`}
                 >
                   {key}
                 </div>

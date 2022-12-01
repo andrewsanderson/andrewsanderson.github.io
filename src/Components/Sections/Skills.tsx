@@ -99,7 +99,7 @@ const Skills = () => {
     asyncWikiFetch().catch(console.error);
 
     const onScroll = () => {
-      if (window.innerWidth < 1024) {
+      if (window.innerWidth < 1280) {
         const midpoint = window.pageYOffset + window.innerHeight / 2;
         for (const [index, ref] of Object.entries(refArray)) {
           if (!!ref.current) {
@@ -127,7 +127,7 @@ const Skills = () => {
   const [skillViewIndex, setSkillViewIndex] = useState(-1);
 
   return (
-    <div className="grid-cols-1 lg:grid-cols-2 grid" ref={wrapperRef}>
+    <div className="grid-cols-1 xl:grid-cols-2 grid" ref={wrapperRef}>
       {skillState.map((skill, index) => {
         return (
           <Card
@@ -166,7 +166,7 @@ const Skills = () => {
                   {"Read More >"}
                 </a>
               </div>
-              <div className="text-right text-[.6rem] text-gray-500 ">
+              <div className="text-right text-[.5rem] uppercase text-gray-500 tracking-wider pt-2 ">
                 info. fetched from Wikipedia
               </div>
             </div>

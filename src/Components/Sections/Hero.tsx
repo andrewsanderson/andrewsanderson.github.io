@@ -21,10 +21,10 @@ const Hero = () => {
         />
       </div>
       <div
-        className="-z-10 min-w-[40%] h-full grow hidden lg:block border border-[#454748] dashed py-2"
+        className="-z-10 min-w-[40%] h-full grow hidden lg:block border border-[#454748] border-dashed py-2"
         style={{ marginRight: "-3px" }}
       >
-        <div className="bg-[#454748] h-full w-full relative"></div>
+        <div className=" border border-[#454748] border-dashed h-full w-full relative"></div>
       </div>
     </div>
   );

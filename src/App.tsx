@@ -1,4 +1,5 @@
 import DropDownMenu from "Components/Library/DropdownMenu";
+import Projects from "Components/Sections/Projects";
 import { MutableRefObject, useRef } from "react";
 import { Contact, Hero } from "./Components/Sections";
 import Skills from "./Components/Sections/Skills";
@@ -21,9 +22,21 @@ const returnToTopIcon = (
   </svg>
 );
 
+const Title = ({ title, subtitle }: { [x: string]: string }) => {
+  return (
+    <div className="pt-12 ml-64 pb-8 relative w-full">
+      <div className="uppercase font-bold text-3xl">{title}</div>
+      <div className="lowercase inline font-thin text-2xl border-b border-dashed border-slate-800">
+        {subtitle}
+      </div>
+    </div>
+  );
+};
+
 function App() {
   const sections = {
     about: { ref: useRef() as MutableRefObject<HTMLDivElement> },
+    projects: { ref: useRef() as MutableRefObject<HTMLDivElement> },
     skills: { ref: useRef() as MutableRefObject<HTMLDivElement> },
     contact: { ref: useRef() as MutableRefObject<HTMLDivElement> },
   };
@@ -36,14 +49,8 @@ function App() {
     sections[title].ref.current.scrollIntoView();
   };
 
-  console.log(
-    window.requestAnimationFrame((e) => {
-      console.log(e);
-    })
-  );
-
   return (
-    <div className=" flex-col flex items-center ">
+    <div className=" flex-col flex items-center overflow-hidden ">
       <div className="text-xl w-full flex justify-center py-4">
         <button onClick={returnToTop} className="fixed top-0 left-0 p-4 m-4">
           {returnToTopIcon}
@@ -59,25 +66,30 @@ function App() {
             </button>
           );
         })}
-        <div
-          className="fixed p-3 pt-6  shadow-2xl top-0 right-0 bg-[#f9f5ef]"
-          style={{ borderRadius: "0 0 0 1rem" }}
-        >
-          <DropDownMenu refs={sections} />
-        </div>
       </div>
+
       <div ref={sections.about.ref} className="w-full">
         <Hero />
       </div>
+      <Title
+        title="Projects"
+        subtitle="Personal projects i'm currently maintaining"
+      />
+      <div className="" ref={sections.projects.ref}>
+        <Projects />
+      </div>
+      <Title
+        title="Skills"
+        subtitle="A range of libraries, languages, and frameworks I'm proficient in."
+      />
       <div className="max-w-2/3 w-2/3" ref={sections.skills.ref}>
         <Skills />
       </div>
+      <Title
+        title="Contact"
+        subtitle="Click below to fill out a form and send an inquiry."
+      />
       <div className="w-full py-16 flex justify-center items-center mt-16 relative">
-        <img
-          src={footerBg}
-          className="absolute -z-10  object-cover w-full -bottom-1/3 opacity-80"
-          alt="bg"
-        />
         <div className="max-w-2/3 w-2/3" ref={sections.contact.ref}>
           <Contact />
         </div>
