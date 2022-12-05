@@ -49,9 +49,24 @@ const Projects = () => {
         })}
       </div>
       <div className="flex justify-center w-full py-6">
-        <div className="font-thin text-xl text-right mr-12 pl-3 w-32">{`<  previous`}</div>
+        <div className="font-thin text-xl text-right mr-4">{`<  previous`}</div>
 
-        <div className="font-thin text-xl ml-3 pr-12 w-32 ">{`next  >`}</div>
+        <div className="flex justify-center items-center">
+          {" "}
+          <div
+            className="bg-slate-300 h-4 w-4 opacity-50 mx-2"
+            style={{ borderRadius: "50%" }}
+          ></div>
+          <div
+            className="bg-slate-300 h-4 w-4 shadow-lg mx-2"
+            style={{ borderRadius: "50%" }}
+          ></div>
+          <div
+            className="bg-slate-300 h-4 w-4 opacity-50 mx-2"
+            style={{ borderRadius: "50%" }}
+          ></div>
+        </div>
+        <div className="font-thin text-xl ml-4 ">{`next  >`}</div>
       </div>
     </div>
   );

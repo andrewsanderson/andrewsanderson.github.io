@@ -4,6 +4,7 @@ import { MutableRefObject, useRef } from "react";
 import { Contact, Hero } from "./Components/Sections";
 import Skills from "./Components/Sections/Skills";
 import footerBg from "./media/footerBg.svg";
+import Title from "./Components/Library/Title";
 
 const returnToTopIcon = (
   <svg
@@ -21,17 +22,6 @@ const returnToTopIcon = (
     />
   </svg>
 );
-
-const Title = ({ title, subtitle }: { [x: string]: string }) => {
-  return (
-    <div className="pt-12 ml-64 pb-8 relative w-full">
-      <div className="uppercase font-bold text-3xl">{title}</div>
-      <div className="lowercase inline font-thin text-2xl border-b border-dashed border-slate-800">
-        {subtitle}
-      </div>
-    </div>
-  );
-};
 
 function App() {
   const sections = {
@@ -52,8 +42,12 @@ function App() {
   return (
     <div className=" flex-col flex items-center overflow-hidden ">
       <div className="text-xl w-full flex justify-center py-4">
-        <button onClick={returnToTop} className="fixed top-0 left-0 p-4 m-4">
-          {returnToTopIcon}
+        <button
+          onClick={returnToTop}
+          className="fixed top-0 left-0 p-4 m-4 z-10 text-xs text-slate-400 rounded-xl flex items-center hover:shadow-lg"
+          style={{ backdropFilter: "blur(6px) brightness(102%)" }}
+        >
+          {returnToTopIcon} return to top
         </button>
         {Object.keys(sections).map((title) => {
           return (
@@ -81,6 +75,7 @@ function App() {
       <Title
         title="Skills"
         subtitle="A range of libraries, languages, and frameworks I'm proficient in."
+        side="right"
       />
       <div className="max-w-2/3 w-2/3" ref={sections.skills.ref}>
         <Skills />
