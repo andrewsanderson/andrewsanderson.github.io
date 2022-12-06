@@ -1,0 +1,70 @@
+@keyframes pointerSlideIn {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes avatarSlideIn {
+  from {
+    transform: translatey(200%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes textFadeAndSlide {
+  from {
+    transform: translateX(40%);
+    opacity: 0%;
+  }
+
+  to {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
+
+@keyframes circleWipe {
+  0% {
+    stroke-dashoffset: 314;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.circle {
+  stroke: black;
+  fill: none;
+  stroke-dasharray: 314; /* equal to circumference of circle 2 * 3.14 * 50 */
+  animation: circleWipe 1s linear forwards;
+  animation-delay: 0.5s;
+  stroke-dashoffset: 314;
+}
+
+.pointer {
+  animation: pointerSlideIn 0.5s linear forwards;
+}
+
+.avatar {
+  animation: avatarSlideIn 0.7s linear forwards;
+  transform: translateY(120%);
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+  z-index: -10;
+  height: 103%;
+}
+
+.title {
+  z-index: -20;
+  opacity: 0%;
+  animation: textFadeAndSlide 0.5s linear forwards;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+}

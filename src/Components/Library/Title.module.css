@@ -67,14 +67,13 @@
 }
 
 .titleL {
-  animation: textFadeAndSlideL 0.5s linear forwards;
+  animation: textFadeAndSlideL 1s linear forwards;
   transform: translateX(200%);
   animation-delay: 0.7s;
   animation-fill-mode: forwards;
 }
 .titleR {
-  animation: textFadeAndSlideR 0.5s linear forwards;
-
+  animation: textFadeAndSlideR 1s linear forwards;
   transform: translateX(200%);
   animation-delay: 0.7s;
   animation-fill-mode: forwards;
