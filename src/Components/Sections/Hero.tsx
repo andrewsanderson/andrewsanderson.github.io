@@ -3,7 +3,7 @@ import styles from "./Hero.module.css";
 
 const Hero = () => {
   return (
-    <div className=" flex justify-center my-32 relative w-full mr-8 flex-col-reverse lg:flex-row overflow-hidden max-w-[100vw] items-center">
+    <div className=" flex justify-center my-32 relative w-full mr-8 flex-col-reverse lg:flex-row max-w-[100vw] items-center">
       <div
         className={`${styles.title} flex lg:items-end justify-center flex-col grow items-center py-6 relative pr-4`}
       >
@@ -14,7 +14,7 @@ const Hero = () => {
         </div>
       </div>
       <div
-        className="flex justify-center items-center overflow-hidden relative z-20 bg-[#f9f5ef] h-[350px] w-[350px]"
+        className={`flex justify-center items-center overflow-hidden relative z-20 bg-[#f9f5ef] h-[350px] w-[350px] ${styles.icon}`}
         style={{ borderRadius: "50%" }}
       >
         <svg

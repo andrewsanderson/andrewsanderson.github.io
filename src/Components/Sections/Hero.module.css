@@ -39,6 +39,15 @@
   }
 }
 
+@keyframes elevate {
+  0% {
+    box-shadow: 0px 0px 15px 15px rgba(0, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0px 0px 15px 15px rgba(0, 0, 0, 0.05);
+  }
+}
+
 .circle {
   stroke: black;
   fill: none;
@@ -46,10 +55,16 @@
   animation: circleWipe 1s linear forwards;
   animation-delay: 0.5s;
   stroke-dashoffset: 314;
+  stroke-width: 0.5px;
 }
 
 .pointer {
   animation: pointerSlideIn 0.5s linear forwards;
+}
+
+.icon {
+  animation: elevate 0.5s linear forwards;
+  animation-delay: 1.5s;
 }
 
 .avatar {
